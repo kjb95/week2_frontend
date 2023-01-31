@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Sidebar from "./component/siderbar/Sidebar";
+import "./gsadp/css/common.css";
+import "./gsadp/css/layout.css";
+import "./gsadp/css/plugin.css";
+import "./gsadp/css/fonts/Pretendard/fonts.css";
+import Content from "./component/content/Content";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import ChartReport from "./component/page/ChartReport";
+import Home from "./component/page/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="wrap">
+			<Sidebar />
+			<BrowserRouter>
+			    <Routes>
+			        <Route path="/" element={<Home/>}/>
+			        <Route path="/chart-report" element={<ChartReport />}/>
+			    </Routes>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;
