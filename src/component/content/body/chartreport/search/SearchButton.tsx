@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import {IsChartOnContext} from "../ChartReportContentBody";
+import {UserAccessDataContext} from "../ChartReportContentBody";
 
 function SearchButton() {
-    const context = useContext(IsChartOnContext);
+    const context = useContext(UserAccessDataContext);
     const handleSearchButton = () => {
         context.setIsChartOn(true);
     }

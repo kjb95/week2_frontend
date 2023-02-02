@@ -1,8 +1,9 @@
 import React from 'react';
 
 interface SearchConditionsTitleProps {
-    title:string
+    title: string
 }
+
 function SearchConditionsTitle({title}: SearchConditionsTitleProps) {
     return (
         <div className="filter-label">

@@ -1,10 +1,11 @@
 import React from 'react';
 
 interface OneDepthMenuProps {
-    menuName:string
-    url:string
+    menuName: string
+    url: string
 }
-function OneDepthMenu ({menuName, url}:OneDepthMenuProps) {
+
+function OneDepthMenu({menuName, url}: OneDepthMenuProps) {
     return (
         <li>
             <a className="one-depth-title" href={url}>

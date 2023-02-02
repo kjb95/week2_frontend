@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import HighChart from "./HighChart";
-import {IsChartOnContext} from "../../ChartReportContentBody";
+import {UserAccessDataContext} from "../../ChartReportContentBody";
 
 function ChartBody() {
-    const context = useContext(IsChartOnContext);
+    const context = useContext(UserAccessDataContext);
 
     return (
         <div className="box-body">

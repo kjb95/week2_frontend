@@ -6,7 +6,7 @@ function Sidebar() {
         <aside className="sidebar">
             <ul className="sidebar-menu tree" data-widget="tree">
                 <OneDepthMenu menuName="홈" url="/"/>
-                <OneDepthMenu menuName="차트 리포트"  url="/chart-report"/>
+                <OneDepthMenu menuName="차트 리포트" url="/chart-report"/>
             </ul>
         </aside>
     );

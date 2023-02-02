@@ -1,28 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Highcharts from 'highcharts'
 import HighchartsReact from "highcharts-react-official";
+import {UserAccessDataContext} from "../../ChartReportContentBody";
 
-const options = {
+let options = {
     chart: {
         height: '23%'
     },
     title: {
         text: null
     },
-    series: [{
-        name: '노출수',
-        data: [43934, 48656, 65165, 81827, 112143, 142383,
-            171533, 165174, 155157, 161454, 43934, 48656, 65165, 81827, 112143, 142383,
-            171533, 165174, 155157, 161454, 43934, 48656, 65165, 81827, 112143, 142383,
-            171533, 165174, 155157, 161454],
-    }, {
-        name: '클릭수',
-        data: [2491, 3794, 2974, 2985, 3249, 3028, 3812, 3688, 3372, 3424,
-            2491, 3794, 2974, 2985, 3249, 3028, 3812, 3688, 3372, 3424,
-            2491, 3794, 2974, 2985, 3249, 3028, 3812, 3688, 3372, 3424
-        ],
-        yAxis: 1,
-    }],
     xAxis: {
         tickInterval: 1,
         labels: {
@@ -37,7 +24,7 @@ const options = {
         labels: {
             format: '{value:0f}'
         }
-    }, { // right y axis
+    }, {
         opposite: true,
         title: {
             text: null
@@ -46,16 +33,36 @@ const options = {
             format: '{value:0f}'
         }
     }],
+}
+
+const plotOptions = {
     plotOptions: {
-        series: {
-            pointStart: 20230101,
-        }
-    },
+        series: {}
+    }
+}
+
+interface ISeriesOptions {
+    series: ChartData[]
+}
+
+const seriesOptions: ISeriesOptions = {
+    series: []
+}
+
+interface ChartData {
+    name: string,
+    data: [],
 }
 
 function HighChart() {
+    let {data1, data2, pointStart} = useContext(UserAccessDataContext);
+    data1 = {...data1, ...{yAxis: 0}};
+    data2 = {...data2, ...{yAxis: 1}};
+    seriesOptions.series = [data1, data2];
+    plotOptions.plotOptions.series = {...plotOptions.plotOptions.series, ...{pointStart}};
+    options = {...options, ...seriesOptions, ...plotOptions};
     return (
-            <HighchartsReact highcharts={Highcharts} options={options}/>
+        <HighchartsReact highcharts={Highcharts} options={options}/>
     );
 }
 
