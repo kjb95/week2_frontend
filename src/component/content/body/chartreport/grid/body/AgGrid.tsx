@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {AgGridReact} from "ag-grid-react";
+import {UserAccessDataContext} from "../../ChartReportContentBody";
 
 function AgGrid() {
 
-    const [rowData] = useState([
-        {basicDate: "2022.07.18", impCnt: 0, clickCnt: 100, convCnt: 465, sellCost: 4590, adspend: 4250},
-        {basicDate: "2022.07.19", impCnt: 6700, clickCnt: 380, convCnt: 355, sellCost: 3820, adspend: 4250},
-    ]);
+    const {userAccessDatas} = useContext(UserAccessDataContext);
 
     const [columnDefs] = useState([
         {field: 'basicDate', headerName: "날짜"},
@@ -21,7 +19,7 @@ function AgGrid() {
     return (
         <div className="ag-theme-alpine" style={{height: "1200px", width: "1200px"}}>
             <AgGridReact
-                rowData={rowData}
+                rowData={userAccessDatas}
                 columnDefs={columnDefs}>
             </AgGridReact>
         </div>
