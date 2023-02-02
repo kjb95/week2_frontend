@@ -1,6 +1,6 @@
 import React from 'react';
-import ChartReportContentBody from "./body/chartreport/ChartReportContentBody";
 import Content from "./Content";
+import {ChartReportContentBody} from "./body/chartreport/ChartReportContentBody";
 
 function ChartReport() {
     return (

@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import AgGrid from "./AgGrid";
+import {IsChartOnContext} from "../../ChartReportContentBody";
 
 function GridBody() {
+    const context = useContext(IsChartOnContext);
+
     return (
         <div className="box-body">
             <div className="ag-grid-empty">
@@ -10,7 +13,7 @@ function GridBody() {
                         <div className="ag-root-wrapper-body ag-focus-managed ag-layout-auto-height" role="presentation">
                             <div className="ag-tab-guard ag-tab-guard-top" role="presentation" tabIndex={0}></div>
                             <div className="ag-root ag-unselectable ag-layout-auto-height" role="grid" aria-colcount={9} aria-rowcount={1}>
-                                <AgGrid/>
+                                {context.isChartOn && <AgGrid/>}
                             </div>
                         </div>
                     </div>

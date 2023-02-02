@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import SearchConditions from "./SearchConditions";
 import SearchWordConditions from "./conditions/SearchWordConditions";
 import SearchTemplateConditions from "./conditions/SearchTemplateConditions";
 import SearchPeriodConditions from "./conditions/SearchPeriodConditions";
+import SearchButton from "./SearchButton";
 
 function Search() {
 	return (
@@ -26,11 +27,7 @@ function Search() {
 								</SearchConditions>
 							</div>
 						</div>
-						<div className="filter-inquire">
-							<button type="button" className="btn btn-ico outline blue --ico-txt ">
-								<i className="ico ico-filter"></i>선택 조건 조회
-							</button>
-						</div>
+						<SearchButton/>
 					</div>
 				</section>
 			</div>

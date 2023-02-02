@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import HighChart from "./HighChart";
+import {IsChartOnContext} from "../../ChartReportContentBody";
 
 function ChartBody() {
+    const context = useContext(IsChartOnContext);
+
     return (
         <div className="box-body">
             <div className="box-top">
@@ -14,7 +17,7 @@ function ChartBody() {
                             overflow: "hidden",
                         }}
                     >
-                        <HighChart/>
+                        {context.isChartOn && <HighChart/>}
                     </div>
                 </div>
             </div>
