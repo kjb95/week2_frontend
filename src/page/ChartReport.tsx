@@ -1,7 +1,7 @@
 import React from "react";
-import Content from "./Content";
-import { ChartReportContentBody } from "./body/chartreport/ChartReportContentBody";
-import Sidebar from "../siderbar/Sidebar";
+import Content from "../component/content/Content";
+import { ChartReportContentBody } from "../component/content/body/chartreport/ChartReportContentBody";
+import Sidebar from "../component/siderbar/Sidebar";
 
 function ChartReport() {
 	return (

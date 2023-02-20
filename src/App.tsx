@@ -7,31 +7,31 @@ import "./gsadp/css/common.css";
 import "./gsadp/css/layout.css";
 import "./gsadp/css/plugin.css";
 import "./gsadp/css/fonts/Pretendard/fonts.css";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ChartReport from "./component/content/ChartReport";
-import Home from "./component/content/Home";
-import LoginContentBody from "./component/content/body/login/LoginContentBody";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ChartReport from "./page/ChartReport";
+import Home from "./page/Home";
 import AuthenticationRequiredRouter from "./component/router/AuthenticationRequiredRouter";
 import AuthenticationNoneRequiredRouter from "./component/router/AuthenticationNoneRequiredRouter";
-import NotFound from "./component/content/NotFound";
+import NotFound from "./page/NotFound";
+import Login from "./page/Login";
 
 function App() {
-    return (
-        <div className="wrap">
-            <BrowserRouter>
-                <Routes>
-                    <Route element={<AuthenticationRequiredRouter/>}>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/chart-report" element={<ChartReport/>}/>
-                    </Route>
-                    <Route element={<AuthenticationNoneRequiredRouter/>}>
-                        <Route path="/login" element={<LoginContentBody/>}/>
-                    </Route>
-                    <Route path="*" element={<NotFound/>}></Route>
-                </Routes>
-            </BrowserRouter>
-        </div>
-    );
+	return (
+		<div className="wrap">
+			<BrowserRouter>
+				<Routes>
+					<Route element={<AuthenticationRequiredRouter />}>
+						<Route path="/" element={<Home />} />
+						<Route path="/chart-report" element={<ChartReport />} />
+					</Route>
+					<Route element={<AuthenticationNoneRequiredRouter />}>
+						<Route path="/login" element={<Login />} />
+					</Route>
+					<Route path="*" element={<NotFound />}></Route>
+				</Routes>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;

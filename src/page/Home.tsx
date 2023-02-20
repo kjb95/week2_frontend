@@ -1,7 +1,7 @@
 import React from "react";
-import HomeContentBody from "./body/home/HomeContentBody";
-import Content from "./Content";
-import Sidebar from "../siderbar/Sidebar";
+import HomeContentBody from "../component/content/body/home/HomeContentBody";
+import Content from "../component/content/Content";
+import Sidebar from "../component/siderbar/Sidebar";
 
 function Home() {
 	return (
