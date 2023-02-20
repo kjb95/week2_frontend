@@ -13,7 +13,6 @@ function AgGrid() {
         {field: 'convCnt', headerName: "전환 수"},
         {field: 'sellCost', headerName: "총 판매금액"},
         {field: 'adspend', headerName: "할인 광고비"},
-
     ])
 
     return (

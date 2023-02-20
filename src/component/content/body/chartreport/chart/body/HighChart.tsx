@@ -5,7 +5,7 @@ import {UserAccessDataContext} from "../../ChartReportContentBody";
 
 let options = {
     chart: {
-        height: '23%'
+        height: '25%'
     },
     title: {
         text: null
