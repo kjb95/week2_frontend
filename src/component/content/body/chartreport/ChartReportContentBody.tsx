@@ -3,6 +3,8 @@ import Search from "./search/Search";
 import Chart from "./chart/Chart";
 import Grid from "./grid/Grid";
 import { findAllClickCnt, findAllImpCnt, findAllUserAccess } from "../../../../api/customApi";
+import { logout } from "../../../../utils/utils";
+import axios from "axios";
 
 interface ChartData {
 	name: string;
@@ -56,15 +58,16 @@ export function ChartReportContentBody() {
 	);
 
 	useEffect(() => {
-		findAllImpCnt().then((response) => {
-			setImpCnts(response.data);
-		});
-		findAllClickCnt().then((response) => {
-			setClickCnts(response.data);
-		});
-		findAllUserAccess().then((response) => {
-			setUserAccessDatas(response.data);
-		});
+		axios
+			.all([findAllImpCnt(), findAllClickCnt(), findAllUserAccess()])
+			.then(
+				axios.spread((allImpCnt, allClickCnt, allUserAccess) => {
+					setImpCnts(allImpCnt.data);
+					setClickCnts(allClickCnt.data);
+					setUserAccessDatas(allUserAccess.data);
+				})
+			)
+			.catch(() => logout());
 	}, []);
 
 	return (

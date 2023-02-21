@@ -1,11 +1,5 @@
 import React from "react";
-import { AUTHENTICATED_USERNAME_SESSION_KEY, JWT_TOKEN } from "../../../../const/Const";
-
-function logout() {
-	sessionStorage.removeItem(AUTHENTICATED_USERNAME_SESSION_KEY);
-	sessionStorage.removeItem(JWT_TOKEN);
-	window.location.href = "/home";
-}
+import {logout} from "../../../../utils/utils";
 
 function HomeContentBody() {
 	return (
