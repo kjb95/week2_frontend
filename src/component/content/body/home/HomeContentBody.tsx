@@ -4,7 +4,7 @@ import { AUTHENTICATED_USERNAME_SESSION_KEY, JWT_TOKEN } from "../../../../const
 function logout() {
 	sessionStorage.removeItem(AUTHENTICATED_USERNAME_SESSION_KEY);
 	sessionStorage.removeItem(JWT_TOKEN);
-	window.location.href = "/";
+	window.location.href = "/home";
 }
 
 function HomeContentBody() {

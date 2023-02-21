@@ -7,7 +7,7 @@ import "./gsadp/css/common.css";
 import "./gsadp/css/layout.css";
 import "./gsadp/css/plugin.css";
 import "./gsadp/css/fonts/Pretendard/fonts.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ChartReport from "./page/ChartReport";
 import Home from "./page/Home";
 import AuthenticationRequiredRouter from "./component/router/AuthenticationRequiredRouter";
@@ -21,7 +21,8 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route element={<AuthenticationRequiredRouter />}>
-						<Route path="/" element={<Home />} />
+						<Route path="/" element={<Navigate to="/home" />} />
+						<Route path="/home" element={<Home />} />
 						<Route path="/chart-report" element={<ChartReport />} />
 					</Route>
 					<Route element={<AuthenticationNoneRequiredRouter />}>
