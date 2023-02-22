@@ -1,16 +1,12 @@
 import React from "react";
 import HomeContentBody from "../component/content/body/home/HomeContentBody";
-import Content from "../component/content/Content";
-import Sidebar from "../component/siderbar/Sidebar";
+import PageForm from "./PageForm";
 
 function Home() {
 	return (
-		<div>
-			<Sidebar />
-			<Content contentHeaderTitle={"사라질 홈이다"}>
-				<HomeContentBody />
-			</Content>
-		</div>
+		<PageForm title="사라질 홈이다">
+			<HomeContentBody />
+		</PageForm>
 	);
 }
 

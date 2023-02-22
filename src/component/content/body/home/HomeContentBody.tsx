@@ -1,5 +1,9 @@
 import React from "react";
-import {logout} from "../../../../utils/utils";
+
+export function logout() {
+	sessionStorage.clear();
+	window.location.href = "/home";
+}
 
 function HomeContentBody() {
 	return (

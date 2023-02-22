@@ -3,7 +3,6 @@ import Search from "./search/Search";
 import Chart from "./chart/Chart";
 import Grid from "./grid/Grid";
 import { findAllClickCnt, findAllImpCnt, findAllUserAccess } from "../../../../api/customApi";
-import { logout } from "../../../../utils/utils";
 import axios from "axios";
 
 interface ChartData {
@@ -67,7 +66,7 @@ export function ChartReportContentBody() {
 					setUserAccessDatas(allUserAccess.data);
 				})
 			)
-			.catch(() => logout());
+			.catch((e) => console.log(e));
 	}, []);
 
 	return (
